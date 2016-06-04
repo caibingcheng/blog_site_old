@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="./static/all.css"/>
+	<title></title>
+</head>
+<body onload="list(1,1)">
+	<div class="left">
+		<div><img src="./images/header.jpg" /></div>
+		<nav>
+				<a href="" name="home"></a>
+				<a href="" name="handle"></a>
+				<a href="" name="tech"></a>
+				<a href="" name="photo"></a>
+				<li id="name">Jerry<p>极度羞涩的小菜菜</p></li>
+				<div class="tips">
+					<a href="#top" id="show" onclick="Show_tip();getContent()"><img src="./images/tips.jpg" alt="介绍"></a>
+					<div id="son"></div>
+				</div>
+				<div id="select">
+					<a href="#home" onclick="list(1,1)"><li>主页</li></a>
+					<a href="#handle" onclick="list(2,1)"><li>随笔</li></a>
+					<a href="#tech" onclick="list(3,1)"><li>所有文章</li></a>
+					<a href="#photo"><li>相片</li></a>
+				</div>	
+		</nav>
+		<div class="meet">
+			<a href="https://github.com/caibingcheng" target="_blank"><img src="./images/github.jpg"></a>
+			<a href="mailto:jack_cai@163.com"><img src="./images/mail.png"></a>
+			<a href="http://user.qzone.qq.com/1193376579" target="_blank"><img src="./images/qqzone.jpg"></a>
+		</div>
+		<div class="footer">
+		<abbr title="参考Litten的博客设计">Designed</abbr> by <i>Cai Bingcheng</i> in HUST, 2016
+		</div>
+	</div>
+	<div class="body">
+		<div class="blog"></div>
+		<div class="blog"></div>
+		<div class="blog"></div>
+		<div class="blog"></div>
+		<div class="blog"></div>
+		<div class="blog"></div>
+		<div class="blog"></div>
+		<div class="blog"></div>
+		<div class="blog"></div>
+		<div class="blog"></div>
+<!-- 		<div class="self_intro">
+			
+		</div>
+		<div class="thinking">
+			
+		</div>
+		<div class="technology">
+			
+		</div>
+		<div class="contact">
+			
+		</div> -->
+<!-- 		<div id="page">
+			<button class="page" onclick="list(window.location.hash,this.innerHTML)"></button>
+			<button class="page" onclick="list(window.location.hash,this.innerHTML)"></button>
+			<button class="page" onclick="list(window.location.hash,this.innerHTML)"></button>
+			<button class="page" onclick="list(window.location.hash,this.innerHTML)"></button>
+			<button class="page" onclick="list(window.location.hash,this.innerHTML)"></button>
+			<button class="page" onclick="list(window.location.hash,this.innerHTML)"></button>
+			<button class="page" onclick="list(window.location.hash,this.innerHTML)"></button>
+		</div> -->
+		<div id="page">
+			<button id="prev" onclick="list(window.location.hash,5)">&lt;&lt;Prev </button><input type="number" name="" min="1"/> / <span id="all_page"></span>   <button onclick="list(window.location.hash,7)" id="go">GO&gt;&gt;</button><button id="next" onclick="list(window.location.hash,6)">Next&gt;&gt;</button>
+		</div>
+
+	</div>
+
+</body>
+<script type="text/javascript" src="./static/all.js"></script>
+</html>

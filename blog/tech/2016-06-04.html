@@ -1,0 +1,68 @@
+<time>2016-06-04</time>
+<tit>第一篇博客源码讲解</tit>
+
+
+<article>
+<p>
+<h2>重点来了：</h2>
+<ul>
+	<li>github.io只提供静态网页</li>
+	<li>Ajax代码讲解</li>
+	<li>Ajax实现异步拉取文章</li>
+	<li>关于各种库、插件的看法</li>
+</ul>
+</p>
+<hr >
+<p>
+	<h3>1.静态网页：</h3>
+	<p>
+	简单点说就是没有后台数据库，你不能做到提交数据给后台，然后让后台做出相应的处理。一般就是由html文件及一些资源和脚本构成。
+	</p>
+	<h3>2.Ajax？：</h3>
+	<p>
+	Ajax，简单的说就是它可以只更新页面部分内容，而不用刷新整个页面。（强！）<br >
+	这个有一点像是桌面应用...
+	开始接触Ajax大概有10天了。我只是分享一些入门经验罢了。<br >
+	好了，不讲这么多废话。	<br >
+	先附上代码一份：<br />
+	<pre>
+function getContent(src)
+{
+	var request=getHttpObject();
+	if(request)
+	{
+		request.open("GET",src,true);
+		request.onreadystatechange=function(){
+			if(request.readyState==4)
+					{
+						//some codes
+					}
+
+		};
+		request.send(null);
+	}
+	else
+	{
+		alert("error");		//错误处理
+	}
+}
+
+function getHttpObject() 	//解决兼容性
+{
+	return new XMLHttpRequest();
+}
+	</pre>
+	<p>看不懂？没关系。过几天再回来可能就是你来教我了。<br >
+	怎么玩Ajax？？？中心是它--XMLHttpRequest , js的又一个（因为node.js，我只能说它是“又一个”）神奇的对象，在微软推出的浏览器中，这个对象被ActiveXObject替代。（真想吐槽各浏览器商！！！）<br >
+
+	（明天考试，今天先到这吧！）
+
+	</p>
+	
+	</p>
+</p>
+</article>
+
+
+<tag><part>Ajax</part> <part>异步</part> <part>对象检测</part> <part>平稳退化</part></tag>
+<more>./blog/tech/2016-06-04.html</more>
