@@ -215,10 +215,70 @@
 		.blog p , .blog h1 , .blog h2 , .blog h3 , .blog h4 , .blog h5 , .blog h6 , .blog span , .blog i , .blog li , .blog ul , .blog ol , .blog tr , .blog td 
 		{line-height: 50px;
 		font-weight: 100;}
+	center{font-weight: 100;}
 	pre{
 		background: #8B6B6B;
 		color:#F5E221;
 		padding: 10px 0;
 		font-size: 1.5em;
 		word-break:break-all;
+	}
+
+
+
+	@media screen and (max-width: 800px)
+{
+		.left{width:100%;
+			position:unset;}
+		.body{width: 100%;
+			position: unset;}
+		.body div{
+		margin:20px 0px;
+		padding: 10px 20px;
+		}
+		.footer{display: none}
+		time{position: absolute;
+		right:20px;
+		margin-top: 10px;
+		}
+	tit{
+		padding:11px 0;
+		padding-left: 0px;}
+	.blog a[class="more"]{
+		top:3px;}
+	.meet
+	{
+		top:-20px;
+	}
+		#select{
+		margin-top: 5px;
+	}
+	
+	a[onclick="Display_tip()"]
+		{display: none}
+	@keyframes myfirst 
+		{
+		0%{opacity: 0;
+			width:0;}
+		100%{opacity: 0.9;
+			width:100%;}
+		}
+	.tip
+		{
+		animation: myfirst 0.5s;
+		margin:18px 0;
+		width:100%;
+		}
+	.tip{
+		position: absolute;
+		z-index: 7;
+		padding: 15px 0px;
+		margin: 15px 0;
+		background: #eee;
+		line-height: 40px;
+		opacity: 0.9;
+		box-shadow: 1px 1px 1px #666;
+		display: none;
+		font-weight: 100;
+	}
 	}
