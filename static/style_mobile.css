@@ -1,0 +1,59 @@
+@media screen and (max-width: 800px)
+{
+		.left{width:100%;
+		position:unset;}
+		.body{width: 100%;
+		position: unset;}
+		.body div{
+		margin:20px 0px;
+		padding: 10px 20px;
+		}
+		.footer{display: none}
+		time{position: absolute;
+		right:20px;
+		margin-top: 10px;
+		}
+		tit{
+		padding:11px 0;
+		padding-left: 0px;}
+		.meet
+		{
+		top:-20px;
+		}
+		#select{
+		margin-top: 5px;
+		}
+		@keyframes myfirst 
+		{
+		0%{opacity: 0;
+		width:0;}
+		100%{opacity: 0.9;
+		width:100%;}
+		}
+		.tip
+		{
+		animation: myfirst 0.5s;
+		margin:18px 0;
+		width:100%;
+		}
+		.tip{
+		position: absolute;
+		z-index: 7;
+		padding: 15px 0px;
+		margin: 15px 0;
+		background: #eee;
+		line-height: 40px;
+		opacity: 0.9;
+		box-shadow: 1px 1px 1px #666;
+		display: none;
+		font-weight: 100;
+		}
+		.tip a{
+		border:0;
+		padding: 0 14px;
+		background: #eee;
+		position: relative;
+		bottom:40px;
+		border-radius: 5px 5px;
+		}
+}

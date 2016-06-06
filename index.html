@@ -4,18 +4,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="./static/all.css"/>
-	<title></title>
+<link rel="stylesheet" type="text/css" href="./static/style_left.css"/>
+<link rel="stylesheet" type="text/css" href="./static/style_blog.css"/>
+<link rel="stylesheet" type="text/css" href="./static/style_mobile.css"/>
+<link rel = "Shortcut Icon" href="./images/header.png">
+	<title>Jerry's Blog Zone</title>
 </head>
 <body onload="list(1,1)">
 	<div class="left">
 		<div><img src="./images/header.jpg" /></div>
 		<nav>
-				<a href="" name="home"></a>
-				<a href="" name="handle"></a>
-				<a href="" name="tech"></a>
-				<a href="" name="photo"></a>
-				<li id="name">Jerry<p>极度羞涩的小菜菜</p></li>
+				<input type="search" name="">
+				<li id="name">Jerry<p>极度羞涩的菜半仙</p></li>
 				<div class="tips">
 					<a href="#top" id="show" onclick="Show_tip();getContent()"><img src="./images/tips.jpg" alt="介绍"></a>
 					<div id="son"></div>
@@ -23,7 +23,7 @@
 				<div id="select">
 					<a href="#home" onclick="list(1,1)"><li>主页</li></a>
 					<a href="#handle" onclick="list(2,1)"><li>随笔</li></a>
-					<a href="#tech" onclick="list(3,1)"><li>所有文章</li></a>
+					<a href="#all" onclick="list(3,1)"><li>所有文章</li></a>
 					<a href="#photo"><li>相片</li></a>
 				</div>	
 		</nav>
@@ -37,17 +37,17 @@
 		</div>
 	</div>
 	<div class="body">
+		<a href="" name="home"></a>
+		<a href="" name="handle"></a>
+		<a href="" name="tech"></a>
+		<a href="" name="photo"></a>
 		<div class="blog"></div>
 		<div class="blog"></div>
 		<div class="blog"></div>
 		<div class="blog"></div>
 		<div class="blog"></div>
 		<div class="blog"></div>
-		<div class="blog"></div>
-		<div class="blog"></div>
-		<div class="blog"></div>
-		<div class="blog"></div>
-<!-- 		<div class="self_intro">
+<!-- 	<div class="self_intro">
 			
 		</div>
 		<div class="thinking">
@@ -75,5 +75,7 @@
 	</div>
 
 </body>
-<script type="text/javascript" src="./static/all.js"></script>
+<script type="text/javascript" src="./static/js_mobile.js"></script>
+<script type="text/javascript" src="./static/get_tip.js"></script>
+<script type="text/javascript" src="./static/get_blog.js"></script>
 </html>

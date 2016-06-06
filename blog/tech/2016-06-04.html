@@ -23,9 +23,7 @@
 	<h3>2.Ajax？：</h3>
 	<p>
 	Ajax，可以只更新页面部分内容，而不用刷新整个页面。（强！）<br >
-	这个有一点像是桌面应用...
-	开始接触Ajax大概有10天了。我只是分享一些入门经验罢了。<br >
-	好了，不讲这么多废话。	<br >
+	OK，开始分享一些入门经验吧<br >
 	先附上代码一份：<br />
 	<pre>
 function getContent(src)
@@ -56,7 +54,7 @@ function getHttpObject() 	//解决兼容性
 	</pre>
 	<p>看不懂？没关系。等会可能就懂了。<br >
 	怎么玩Ajax？？？中心是它--XMLHttpRequest , 一个很老的对象了，现在不需要了解它的内在处理机制，知道有这么一个对象就好了。在微软推出的浏览器中，这个对象被ActiveXObject替代。（真想吐槽各浏览器商！！！）<br >
-	既然发现了IE对它“改造了”，那我们也来改造一下我们的函数吧！<br>
+	既然IE对它“改造了”，那我们也来改造一下我们的函数吧！实际上在edge上测试XMLHttpRequest是没有问题的<br>
 	<pre>
 function getHttpObject()
 {
@@ -77,23 +75,24 @@ function getHttpObject()
 	return new XMLHttpRequest();
 }		
 	</pre>
-	<p>这里通过<b>对象检测技术</b>，检测了浏览器是否支持XMLHttpRequest对象。用到了错误处理机制，对错误进行处理。</p>
+	<p>这种方式称为<b>对象检测技术</b></p>
 	<p>
-	得到了getHttpObject返回的XMLHttpRequest对象之后就可以开工了。看看得到的XMLHttpRequest对象有哪些方法吧：<br >
+	得到了getHttpObject返回的XMLHttpRequest对象之后就可以开工了。先看看得到的XMLHttpRequest对象有哪些方法吧：<br >
 	<li>open指定请求类型GET/POST</li>
 	<li>send向服务器传递参数，因为GET方法把参数直接加载open方法的url参数里面，此时send就为空。若是在open里面以POST方法请求就要先用类似XMLHttpRequest.setRequestHeder("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");的句子发送报头了。之后再用send方法发送参数</li>
+	<li>暂且不知道了...(#‵′)凸</li>
 	</p>
 	<p>
-	onreadystatechange什么鬼？？？--一个事件处理函数。但是切记不要在函数后面加括号，因为括号表示立即调用<br ><br >服务器向XMLHttpRequest发回响应时，readyState属性有5个可能的值：
+	这个onreadystatechange什么鬼？？？--一个事件处理函数。但是切记不要在函数后面加括号，因为括号表示立即调用<br ><br >服务器向XMLHttpRequest发回响应时，readyState属性有5个可能的值：
 	<li>0表示未初始化</li>
 	<li>1表示正在加载</li>
 	<li>2表示加载完毕</li>
 	<li>3表示正在交互</li>
 	<li>4表示完成</li>
-	<p>至于怎么用，大胆发挥自己想象吧！<br>弱弱的穿插一下异步，毕竟是Ajax的核心。另外前几天看node.js时，里面提到了非阻塞的交互模式，这两者有点类似，现在正好可以看看<a href="http://blog.csdn.net/feitianxuxue/article/details/8936802" target="_blank">处理大并发之一 对异步非阻塞的理解</a>来了解一下这两个东东</p>
+	<p>至于怎么用，大胆发挥自己想象吧！<br>因为交互是异步的，效果上可能和非阻塞交互有点类似，现在正好可以看看<a href="http://blog.csdn.net/feitianxuxue/article/details/8936802" target="_blank">处理大并发之一 对异步非阻塞的理解</a>来了解一下这两个东东</p>
 	<p>
-	怎么得到返回的数据？<br >
-	responseText--后台返回的一串字符串。当readyState告诉你说：“嘿！服务器告诉我交互已经完成了！”时，就可以得到完整的responseText，之后你就可以说：“嘿！responseText你快去MakeText函数这里处理一下自己！”当然，还有很多要注意的地方。这个以后会讲到。	
+	那么怎么得到返回的数据？<br >
+	responseText--后台返回的一串字符串。当readyState告诉你“嘿！服务器告诉我交互已经完成了！”，就可以得到完整的responseText，之后就可以“嘿！responseText你快去MakeText函数这里处理一下自己！”
 	</p>
 	<p>
 	总结一下这一段。。。<br>
@@ -105,22 +104,21 @@ function getHttpObject()
 	<center>我是分割线</center>
 	<hr>
 	<h3>3.请求文章：</h3>
-	<p>首先有一个存放文章名字的文件，我只要可以访问到它，并把它的数据提取出来就行了。这样的好处就是，如果我对内容的样式没有要求的话，就不用再改网页的内容了。一切文章的获取都是靠脚本在执行！<br >
-	我太蠢了，现在还没有想到好一点的方法...<br >
+	<p>首先有一个存放文章名字的文件，我只要可以访问到它，并把它的数据提取出来就行了。这样的好处就是，如果我对内容的样式没有要求的话，就不用再改网页的内容。一切文章的获取都是靠脚本在执行！<br >
 	对，学习了Ajax之后就是这么简单！！！</p>
 	<center>又来一条</center>
 	<hr>
 	<h3>4.库和插件：</h3>
-	<p>这些东西很好啊，太方便了，有些还有一点无脑，so easy...<br >
+	<p>这些东西很好啊，太方便了<br >
 	额...但是我究极懒惰。不想去看文档啊！！！而且英文、英文、英文！！！<br >
-	虽然以后免不了要看的，嗯，还是以后再看吧。。。<br >实际上是，作为初学者，我还是更多的希望可以用自己的思考来解决问题。插件什么的，在不会实现某个功能的时候再用用吧</p>
+	虽然以后免不了要看的，嗯，那就以后再看吧。。。<br >实际上，作为初学者，我还是希望使用原生js来解决问题的，所以这里我并没有用到任何插件</p>
 	</p>
 	<center>绝对是最后一条</center>
 	<hr>
-	<p>对了，关于js，极度推荐《JavaScript DOM编程艺术（第二版）》这本书...代码，真的就是艺术，不只是它的外貌，有内涵的！<br >链接？？？没有...</p>
+	<p>对了，关于js，推荐《JavaScript DOM编程艺术（第二版），对代码的布局及缜密性这些有帮助的<br >链接？？？没有...我不做广告</p>
 </p>
 </article>
 
 
-<tag><part>Ajax</part> <part>异步</part> <part>对象检测</part> <part>平稳退化</part></tag>
+<tag><part>Ajax</part> <part>异步</part> <part>对象检测</part></tag>
 <more>./blog/tech/2016-06-04.html</more>
