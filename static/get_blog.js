@@ -1,4 +1,5 @@
 	list_all=new Array;
+	from_="";
 	function list(x,page){
 		var i;
 		var para=document.getElementsByClassName("blog");
@@ -16,21 +17,26 @@
 			{
 				case 2 :url="./blog/essay/";
 						list_url="./list/list_essay.html";
+						from_="handle";
 						this_page=1;
 						break;
 				case "#handle" :url="./blog/essay/";
 						list_url="./list/list_essay.html";
+						from_="handle";
 						break;
 				case 1 :url="./blog/tech/";
 						list_url="./list/list_tech.html";
 						this_page=1;
+						from_="home";
 						break;
 				case "#home" :url="./blog/tech/";
-						list_url="./list/list_tech.html"
+						list_url="./list/list_tech.html";
+						from_="home";
 						break;
 				case "#all":
 				case 3:url="./blog/";
-						list_url="./list/list_all.html"
+						list_url="./list/list_all.html";
+						from_="all";
 						break;
 			}
 			request.open("GET",list_url,true);
@@ -154,6 +160,9 @@
 		text[3]=temp[1];
 		text[3]=text[3].split("</more>")[0];
 		text[2]=temp[0];
+		if(from_	=="all")
+		return text[0]+"<hr>"+text[2]+"<a class=\"more\" onclick=\"Show_this(this)\""+"id=\""+text[3]+"\">more>><a/>";
+		else
 		return text[0]+"<hr>"+"<p>"+first_para+"</p>"+"<hr>"+text[2]+"<a class=\"more\" onclick=\"Show_this(this)\""+"id=\""+text[3]+"\">more>><a/>";
 	}
 	function Show_this(x)
