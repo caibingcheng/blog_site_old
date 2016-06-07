@@ -78,7 +78,7 @@
 		bottom:40px;}
 	.blog img{
 		width:100%;
-		padding: 20px;
+		padding:10px 0;
 	}
 		.blog p , .blog h1 , .blog h2 , .blog h3 , .blog h4 , .blog h5 , .blog h6 , .blog span , .blog i , .blog li , .blog ul , .blog ol , .blog tr , .blog td 
 		{line-height: 30px;
