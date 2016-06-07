@@ -13,7 +13,7 @@
 		font-size:0.5em;
 		visibility: hidden;
 	}
-	.left{position: fixed;
+	.left{position:fixed;
 		top:0px;
 		text-align: center;
 		background:#fff;

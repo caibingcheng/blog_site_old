@@ -1,7 +1,7 @@
 @media screen and (max-width: 800px)
 {
 		.left{width:100%;
-		position:unset;}
+		position:relative;}
 		.left div:nth-child(1){
 		padding-top: 0px;
 		}
@@ -31,14 +31,14 @@
 		0%{opacity: 0;
 		width:0;}
 		100%{opacity: 0.9;
-		width:100%;}
+		width:94%;}
 		}
 		.tip
 		{
 		animation: myfirst 0.5s;
-		margin:15px 0;
+		margin:0px 0;
 		margin-top:10px;
-		width:100%;
+		width:94%;
 		}
 		img[src="./images/tips.jpg"]{
 			top:0;
