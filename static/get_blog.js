@@ -154,7 +154,7 @@
 		text[3]=temp[1];
 		text[3]=text[3].split("</more>")[0];
 		text[2]=temp[0];
-		return text[0]+"<p>"+first_para+"</p>"+text[2]+"<a class=\"more\" onclick=\"Show_this(this)\""+"id=\""+text[3]+"\">more>><a/>";
+		return text[0]+"<hr>"+"<p>"+first_para+"</p>"+"<hr>"+text[2]+"<a class=\"more\" onclick=\"Show_this(this)\""+"id=\""+text[3]+"\">more>><a/>";
 	}
 	function Show_this(x)
 	{

@@ -5,7 +5,7 @@
 		document.getElementsByClassName("tips")[0].insertBefore(tip,document.getElementById("son"));
 		var tips=document.getElementsByClassName("tip")[0];
 		tips.style.display="block";
-		tips.innerHTML="<a href=\"#\" onclick=\"Display_tip()\">X</a>";
+		tips.innerHTML="<button onclick=\"Display_tip()\">X</button>";
 	}
 	function Display_tip()
 	{
@@ -13,7 +13,7 @@
 		tips.style.display="none";
 		tips.innerHTML="";
 		var tips=document.getElementsByClassName("tips")[0];
-		tips.innerHTML="<a href=\"#\" id=\"show\" onclick=\"Show_tip();getContent()\"><img src=\"./images/tips.jpg\" alt=\"介绍\"></a><div id=\"son\"></div>";
+		tips.innerHTML="<button href=\"#\" id=\"show\" onclick=\"Show_tip();getContent()\"><img src=\"./images/tips.jpg\" alt=\"介绍\"></button><div id=\"son\"></div>";
 		
 	}
 

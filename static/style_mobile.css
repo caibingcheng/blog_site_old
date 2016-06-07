@@ -2,10 +2,13 @@
 {
 		.left{width:100%;
 		position:unset;}
+		.left div:nth-child(1){
+		padding-top: 0px;
+		}
 		.body{width: 100%;
 		position: unset;}
 		.body div{
-		margin:20px 0px;
+		margin:20px 5px;
 		padding: 10px 20px;
 		}
 		.footer{display: none}
@@ -21,7 +24,7 @@
 		top:-20px;
 		}
 		#select{
-		margin-top: 5px;
+		margin-top: 0px;
 		}
 		@keyframes myfirst 
 		{
@@ -33,20 +36,12 @@
 		.tip
 		{
 		animation: myfirst 0.5s;
-		margin:18px 0;
+		margin:15px 0;
+		margin-top:10px;
 		width:100%;
 		}
-		.tip{
-		position: absolute;
-		z-index: 7;
-		padding: 15px 0px;
-		margin: 15px 0;
-		background: #eee;
-		line-height: 40px;
-		opacity: 0.9;
-		box-shadow: 1px 1px 1px #666;
-		display: none;
-		font-weight: 100;
+		img[src="./images/tips.jpg"]{
+			top:0;
 		}
 		.tip a{
 		border:0;

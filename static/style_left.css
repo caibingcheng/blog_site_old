@@ -19,6 +19,9 @@
 		background:#fff;
 		box-shadow: 1px 1px 1px #666;
 		height: 100%;}
+	.left button{background: #fff;
+		border:0;
+		outline: none;}
 	.left li{
 		padding: 10px 120px;
 		font-size: 1em;	
@@ -69,20 +72,6 @@
 		color: #ccc;
 	}
 	.on{background: #F7D5FD}
-	.body div{
-		background: #fff;
-		box-shadow: 2px 2px 2px #777;
-		margin:15px 40px;
-		margin-left: 360px;
-		padding: 10px 20px;
-		display: none;
-		word-break: break-all;
-	/*	height:400px;
-	*/}
-	.body div[id="page"]{display: block;
-		text-align: center;
-		background: none;
-		box-shadow: none}
 	.meet
 	{
 		position: relative;
@@ -96,20 +85,25 @@
 	.meet a img:hover{
 		opacity: 0.5
 	}
+	#son{
+		
+	}
 	.tip{
 		position: absolute;
-		z-index: 7;
-		padding: 10px 10px;
-		margin: 15px 10px;
+		z-index: 5;
+		padding: 15px 10px;
+		margin: 10px 10px;
 		width:280px;
 		background: #eee;
+/*		background-attachment: fixed;
+		-webkit-filter: blur(5px);*/
 		line-height: 40px;
 		opacity: 0.9;
 		box-shadow: 1px 1px 1px #666;
 		display: none;
 		font-weight: 100;
 	}
-	@keyframes myfirst 
+	@keyframes tip 
 		{
 		0%{opacity: 0;
 			width:265px;}
@@ -121,14 +115,14 @@
 		}
 	.tip
 		{
-		animation: myfirst 0.5s;
+		animation: tip 0.5s;
 		}
-	.tip a{
+	.tip button{
 		border:0;
-		padding: 0 14px;
+		padding: 2px 14px;
 		background: #eee;
 		position: relative;
-		bottom:40px;
+		bottom:45px;
 		left:246px;
 	}
 	.footer{
