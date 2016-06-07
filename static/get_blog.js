@@ -183,7 +183,7 @@
 						{
 							var para=x.parentNode;
 							text=request.responseText.split("<more>");
-							para.innerHTML=text[0]+"<a class=\"more\" onclick=\"Pack_this(this)\""+"id=\""+src+"\">pack^<a/>"+"<hr id=\"bottom_hr\"/>"+comment;
+							para.innerHTML=text[0]+"<a class=\"more\" onclick=\"Pack_this(this)\""+"id=\""+src+"\">pack^</a>"+"<hr id=\"bottom_hr\"/>"+comment;
 						}
 
 			};
