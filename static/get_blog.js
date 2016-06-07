@@ -171,7 +171,7 @@
 		src=x.id;
 
 
-		comment="<div class=\"ds-thread\" data-thread-key=src data-title=\"请替换成文章的标题\" data-url=\"http://caibingcheng.github.io/\"></div>"
+		comment="<div class=\"ds-thread\" data-thread-key=\""+src+"\"data-title=\"请替换成文章的标题\" data-url=\"http://caibingcheng.github.io/\"></div>"
 
 
 		//alert(src);
