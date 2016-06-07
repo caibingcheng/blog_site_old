@@ -169,6 +169,11 @@
 	{
 		var request=getHttpObject();
 		src=x.id;
+
+
+		comment="<div class=\"ds-thread\" data-thread-key=src data-title=\"请替换成文章的标题\" data-url=\"http://caibingcheng.github.io/\"></div>"
+
+
 		//alert(src);
 		if(request)
 		{
@@ -178,7 +183,7 @@
 						{
 							var para=x.parentNode;
 							text=request.responseText.split("<more>");
-							para.innerHTML=text[0]+"<a class=\"more\" onclick=\"Pack_this(this)\""+"id=\""+src+"\">pack^<a/>"+"<hr id=\"bottom_hr\"/>";
+							para.innerHTML=text[0]+"<a class=\"more\" onclick=\"Pack_this(this)\""+"id=\""+src+"\">pack^<a/>"+"<hr id=\"bottom_hr\"/>"+comment;
 						}
 
 			};
