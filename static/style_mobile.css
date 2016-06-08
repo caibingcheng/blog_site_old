@@ -53,6 +53,6 @@
 		}
 		tit{font-size: 1.5em}
 		time{font-size: 0.5em;padding-right: 30px}
+		.tips{visibility: hidden;}
+		#select{margin-top: -50px;}
 }
-.tips{visibility: hidden;}
-#select{margin-top: -50px;}
