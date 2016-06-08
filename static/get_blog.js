@@ -151,6 +151,7 @@
 	{
 		text=texts.split("<article>");//top
 		temp=text[1].split("</article>");
+		tit=text[0].split("<tit>");
 		text[1]=temp[0];//body
 		text[2]=temp[1];//tag
 		para=text[1].split("<p>");
@@ -160,7 +161,10 @@
 		text[3]=temp[1];
 		text[3]=text[3].split("</more>")[0];
 		text[2]=temp[0];
-		if(from_	=="all")
+		tit[1]="<a onclick=\"Show_this(this)\" id=\""+text[3]+"\">"+"<tit>"+tit[1]+"</a>";
+		tit[0]="<img src=\"./images/date.png\">"+tit[0];
+		text[0]=tit[0]+tit[1];
+		if(from_=="all")
 		return text[0]+"<hr>"+text[2]+"<a class=\"more\" onclick=\"Show_this(this)\""+"id=\""+text[3]+"\">more>><a/>";
 		else
 		return text[0]+"<hr>"+"<p>"+first_para+"</p>"+"<hr>"+text[2]+"<a class=\"more\" onclick=\"Show_this(this)\""+"id=\""+text[3]+"\">more>><a/>";
@@ -183,7 +187,7 @@
 						{
 							var para=x.parentNode;
 							text=request.responseText.split("<more>");
-							para.innerHTML=text[0]+"<a class=\"more\" onclick=\"Pack_this(this)\""+"id=\""+src+"\">pack^</a>"+"<hr id=\"bottom_hr\"/>";
+							para.innerHTML="<img src=\"./images/date.png\">"+text[0]+"<a class=\"more\" onclick=\"Pack_this(this)\""+"id=\""+src+"\">pack^</a>"+"<hr id=\"bottom_hr\"/>";
 						}
 
 			};

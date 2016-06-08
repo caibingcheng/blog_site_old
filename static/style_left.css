@@ -21,7 +21,8 @@
 		height: 100%;}
 	.left button{background: #fff;
 		border:0;
-		outline: none;}
+		outline: none;
+		cursor: pointer;}
 	.left li{
 		padding: 10px 120px;
 		font-size: 1em;	
@@ -124,6 +125,8 @@
 		position: relative;
 		bottom:45px;
 		left:246px;
+		outline: none;
+		cursor: pointer;
 	}
 	.footer{
 		background:#fff;
@@ -134,6 +137,21 @@
 		position: fixed;
 		bottom:0;
 	}
+/*	#loading{
+		animation: load 0.5s linear 0s infinite;
+		display: block; 
+		width: 20px;
+		background: #73C571;
+		border-radius: 10px 10px;
+		text-align: center;
+		margin-left: 50%
+	}
+	@keyframes load{
+		from { transform:rotate(0deg); 
+			} 
+		to { transform:rotate(360deg);
+			 }
+	}*/
 	/*	.body button{
 		width:20px;
 		height:20px;

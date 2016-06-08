@@ -7,15 +7,17 @@
 <link rel="stylesheet" type="text/css" href="./static/style_left.css"/>
 <link rel="stylesheet" type="text/css" href="./static/style_blog.css"/>
 <link rel="stylesheet" type="text/css" href="./static/style_mobile.css"/>
+<link rel="stylesheet" type="text/css" href=""/>
 <link rel = "Shortcut Icon" href="./images/header.png">
+
 	<title>Jerry's Blog Zone</title>
 </head>
-<body onload="list(1,1)">
+<body>
 	<div class="left">
-		<div><img src="./images/header.jpg" /></div>
+		<div class="img"><img src="./images/header.jpg" id="head"/></div>
 		<nav>
 				<input type="search" name="">
-				<li id="name">Jerry<p>极度羞涩的菜半仙</p></li>
+				<li id="name">Jerry<p>贫道法号菜半仙</p></li>
 				<div class="tips">
 					<button id="show" onclick="Show_tip();getContent()"><img src="./images/tips.jpg" alt="介绍"></button>
 					<div id="son"></div>
@@ -51,7 +53,7 @@
 		<div id="page">
 			<button id="prev" onclick="list(window.location.hash,5)">&lt;&lt;Prev </button><input type="number" name="" min="1"/> / <span id="all_page"></span>   <button onclick="list(window.location.hash,7)" id="go">GO&gt;&gt;</button><button id="next" onclick="list(window.location.hash,6)">Next&gt;&gt;</button>
 		</div>
-
+<!-- 		<div id="loading"></div> -->
 	</div>
 
 </body>
