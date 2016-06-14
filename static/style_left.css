@@ -2,7 +2,8 @@
 		margin:0 0;
 		font-family: "Microsoft YaHei";
 		background: #eee;}
-	.left input[type="search"]{
+	a{outline: none;}
+	.left input[type="search"],.left button[id="search"]{
 		position: absolute;
 		top:10px;
 		left:5px;
