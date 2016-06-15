@@ -45,8 +45,33 @@ void AddInfo(INFO *head , unsigned int *order)
 <center>我是分割线</center>
 <hr>
 <h3>链表的排序：</h3>
-<p></p>
-<p>待续...</p>
+<p>
+任然代码优先：
+</p>
+<pre>
+void Sorted(INFO *head)
+{
+INFO *temp,*p,*q;
+for(p=head;p->next!=NULL;p++)
+	for(q=p;q->next!=NULL;q++)
+		{
+			if(strcmp(p->data,q->data)>0)
+				{
+				temp=p;
+				p=q;
+				q=temp;
+				}
+		}
+}
+</pre>
+<p>插入排序，一看就容易理解了吧。当然，更优秀的算法也有。</p>
+<center>题外话</center>
+<hr>
+<p>
+这些天写的东西都要有最基础的准备。至于类似for循环啊、if啊等等，这些实在没必要写了。需要的话，相信你一天就可以看完了，而且也没什么可以讲的。个人认为，这些东西对于初学者都不是很好理解的，没关系。看一次还不能理解的话，我的目的就达到了；看一次就懂得话，是我太菜了~~~学习编程这东西，最好不要是让别人完全嚼烂了再学吧。多多自己分析分析！！！<br>
+总结为：理解+自我实践<br>
+以上为个人愚见
+</p>
 </article>
 
 
