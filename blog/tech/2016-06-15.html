@@ -1,5 +1,5 @@
 <time>2016-06-15</time>
-<tit>链表读取，排序等</tit>
+<tit>链表读取、排序等</tit>
 
 
 <article>
@@ -18,11 +18,37 @@
 <p>Ok,有办法获取单向链表的头那么接下来就好办了。</p>
 <hr>
 <h3>添加、删除：</h3>
-<p>读取内容在你知道表头的情况下就很简单了吧，这里应该不需要我再赘述了。如果需要了解的话，这一段当然会有的啦。</p>
-
+<p>读取内容在你知道表头的情况下就很简单了吧，这里应该不需要我再赘述了。如果需要了解的话，这一段当然还是会有的啦。</p>
+<p>主要介绍如何添加数据，还是代码块优先：</p>
+<pre>
+void AddInfo(INFO *head , unsigned int *order)
+{
+	INFO *temp,*ins;
+	unsigned int n=1;
+	temp=head;
+	while(order > n)
+	{
+		temp=temp->next;	//移动节点的指向指针
+		n++;
+	}
+	if((ins=(INFO *)malloc(sizeof(INFO)))==NULL)
+	{
+	//内存申请失败，处理措施
+	}
+	gets(ins->data);
+	ins->next=temp->next;	//插入节点的next成员指向当前节点的下一个节点
+	temp->next=ins;			//当前节点的next成员指向插入节点
+}
+</pre>
+<p>OK，到此向链表中插入一个节点的工作就算完成了。至于如何删除节点，应该就容易明白了吧。<br>把要删除的节点的前一个节点的next成员指向要删除节点的下一个节点就好了（有点绕...）。为了结构优美一点，把要删除的节点的next置为NULL是挺不错的。</p>
+<p>据此，各位就可以用某个节点的数据为判断依据，决定是否要保留（替换）这个节点。</p>
+<center>我是分割线</center>
+<hr>
+<h3>链表的排序：</h3>
+<p></p>
 <p>待续...</p>
 </article>
 
 
-<tag><part></part></tag>
+<tag><part>链表</part> <part>内容处理</part> <part>排序</part></tag>
 <more>./blog/tech/2016-06-15.html</more>
