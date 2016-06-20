@@ -4,7 +4,8 @@
 
 <article>
 <p>
-之前说道了怎么创建单向链表，这里将介绍如何处理已经创建好的链表。包括读取、添加、删除、排序等。<br>Ok，
+<h3>抱歉，文章发现错误内容，更改中</h3>
+<!-- 之前说道了怎么创建单向链表，这里将介绍如何处理已经创建好的链表。包括读取、添加、删除、排序等。<br>Ok，
 进入正题：
 </p>
 <center>正题</center>
@@ -51,15 +52,15 @@ void AddInfo(INFO *head , unsigned int *order)
 <pre>
 void Sorted(INFO *head)
 {
-INFO *temp,*p,*q;
-for(p=head;p->next!=NULL;p++)
-	for(q=p;q->next!=NULL;q++)
+INFO temp,*p,*q;
+for(p=head;p->next!=NULL;p=p->next)
+	for(q=p;q->next!=NULL;q=q->next)
 		{
 			if(strcmp(p->data,q->data)>0)
 				{
-				temp=p;
-				p=q;
-				q=temp;
+				temp=*p;
+				*p=*q;
+				*q=temp;
 				}
 		}
 }
@@ -71,7 +72,7 @@ for(p=head;p->next!=NULL;p++)
 这些天写的东西都要有最基础的准备。至于类似for循环啊、if啊等等，这些实在没必要写了。需要的话，相信你一天就可以看完了，而且也没什么可以讲的。个人认为，这些东西对于初学者都不是很好理解的，没关系。看一次还不能理解的话，我的目的就达到了；看一次就懂得话，是我太菜了~~~学习编程这东西，最好不要是让别人完全嚼烂了再学吧。多多自己分析分析！！！<br>
 总结为：理解+自我实践<br>
 以上为个人愚见
-</p>
+ --></p>
 </article>
 
 
