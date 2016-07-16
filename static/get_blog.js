@@ -52,7 +52,8 @@
 							}
 
 			input=document.getElementsByTagName("input")[1];
-			if(pages<=1){input.disabled="true"}
+			// if(pages<=1){input.disabled="true"}
+			// 	else(input.disabled="false")
 
 			switch(page)
 			{
