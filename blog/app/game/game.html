@@ -202,7 +202,7 @@
 			<ul>
 				<li>点击开始系统在随机位置生成一张图</li>
 				<li>点击该图并记忆位置，游戏界面黑屏</li>
-				<li>约1s后屏幕重新点亮并有一张新图在随机位置生成</li>
+				<li>约0.5s后屏幕重新点亮并有一张新图在随机位置生成</li>
 				<li>点击该图并记忆位置，游戏界面黑屏</li>
 				<li>重复上述过程</li>
 			</ul>
@@ -273,7 +273,7 @@
 					var imgs_index = parseInt(Math.random() * (14 + 1) + 14 , 10);
 					temp_img = imgs_index;
 					imgs[imgs_sort[temp_index]].src = "icon/" + imgs_index + ".png";
-					window.setTimeout("document.getElementById(\"game\").style.visibility = \"visible\"",1000);
+					window.setTimeout("document.getElementById(\"game\").style.visibility = \"visible\"",500);
 					temp_index++;
 				}
 				else 
