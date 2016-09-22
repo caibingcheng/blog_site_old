@@ -6,10 +6,16 @@
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 	</head>
 	<style>
+		html{
+			padding: 0 0;
+			margin: 0 0;
+		}
 		body{
 			background: #222;
+			padding: 0 0;
+			margin: 0 0;
 		}
-		.lines,#begin{
+		.lines,#begin,#info,#setting{
 			width:100%;
 			vertical-align: middle;
 			text-align: center;
@@ -22,7 +28,7 @@
 			padding: 0 0;
 			border: 0;
 		}
-		#begin button{
+		#begin button , #setting button{
 			margin:0 20px;
 			margin-top: 10px;
 			background: #aaa;
@@ -33,6 +39,48 @@
 		}
 		#begin span{
 			color:#aaa;
+		}
+		#info{
+			width:100%;
+			line-height: 30px;
+			background: #aaa;
+			position: absolute;
+			bottom:0;
+		}
+		#info span{
+			width: 50%;
+			margin: 0 50px;
+			text-align: center;
+		}
+		#setting{
+			background: #aaa;
+			width:100%;
+			padding: 5px 5px;
+			position: absolute;
+			top:0;
+			display: none;
+		}
+		#setting select{
+			padding: 5px 5px;
+			margin-top: 10px;
+		}
+		#setting button{
+			border: 0;
+			background: #eee;
+			margin: 20px 0;
+		}
+		#help{
+			width:100%;
+			background: #aaa;
+			padding: 5px 5px;
+			position: absolute;
+			top:0;
+			text-align: center;
+			display: none;
+		}
+		#help li{
+			margin:10px 5px;
+			text-align: initial;
 		}
 	</style>
 	<body>
@@ -133,15 +181,43 @@
 			<button>开始</button>
 			<span>时间：000</span>
 		</div>
+		<div id="info">
+			<span>设置</span>
+			<span>帮助</span>
+		</div>
+		<div id="setting">
+			背景色：
+			<select name="" id="setting_color">
+				<option value="5">恢复</option>
+				<option value="1">白色</option>
+				<option value="2">黑色</option>
+				<option value="3">灰色</option>
+				<option value="4">蓝色</option>	
+			</select>
+			<br>
+			<button id="setting_form">确定</button>
+		</div>
+		<div id="help">
+			<h3>记忆力训练</h3>
+			<ul>
+				<li>点击开始系统在随机位置生成一张图</li>
+				<li>点击该图并记忆位置，游戏界面黑屏</li>
+				<li>约1s后屏幕重新点亮并有一张新图在随机位置生成</li>
+				<li>点击该图并记忆位置，游戏界面黑屏</li>
+				<li>重复上述过程</li>
+			</ul>
+		</div>
 	</body>
 	<script type="text/javascript">
-
 		var time_sec = 0;
 		var get_score = 0;
 		var imgs = document.getElementsByTagName('img');
 		var imgs_sort = new Array();
 		var temp_index = 0;
 		var temp_img;
+		var time_flow;
+		var flag_help = 0;
+		var flag_setting = 0;
 		
 		for(var loop = 0 ; loop < 63 ; loop++)
 			imgs_sort[loop] = loop;
@@ -168,6 +244,19 @@
 			for(var loop = 0 ; loop < 63 ; loop++)
 				imgs[loop].onclick = ClickSite;
 		}
+
+		function GetScore()
+		{
+			var string;
+			get_score++;
+			if(get_score < 10)
+				string = "得分：00" + get_score;
+			else if(get_score < 100)
+				string = "得分：0" + get_score;
+			else string = "得分：" + get_score;
+			document.getElementById("begin").getElementsByTagName("span")[0].innerHTML = string;
+		}
+
 		function ClickSite()
 		{
 			var this_part = this.src.split(".");
@@ -178,14 +267,7 @@
 					var time = new Date();
 					var time_1 = time.getTime();
 					var time_2 = new Date();
-					var string;
-					if(get_score < 10)
-						string = "得分：00" + get_score;
-					else if(get_score < 100)
-						string = "时间：0" + get_score;
-					else string = "时间：" + get_score;
-					document.getElementById("begin").getElementsByTagName("span")[0].innerHTML = string;
-					get_score++;
+					GetScore();
 					//alert(time_1);						
 					document.getElementById("game").style.visibility = "hidden";
 					var imgs_index = parseInt(Math.random() * (14 + 1) + 14 , 10);
@@ -196,10 +278,63 @@
 				}
 				else 
 				{
-					alert("YOU LOSE");
+					var score = "你的得分为：" + get_score + "\n";
+					var time = "用时：" + time_sec + "s";
+					alert(score+time)	;
+					get_score = 0;
+					time_sec = 0;
+					for(var loop = 0 ; loop < 63 ; loop++)
+						imgs[loop].src = "";
+					InitVector(imgs_sort);
+					document.getElementById("begin").getElementsByTagName("button")[0].style.visibility = "visible";
+					clearInterval(time_flow);
+					document.getElementById("begin").getElementsByTagName("span")[0].innerHTML = "得分：000";
+					document.getElementById("begin").getElementsByTagName("span")[1].innerHTML = "时间：000";
 				}
 			}
 
+		}
+
+		function ShowHelp()
+		{
+			if(!flag_help)
+			{
+				document.getElementById("help").style.display = "block";
+				flag_help = 1;
+			}
+			else 
+			{
+				document.getElementById("help").style.display = "none";
+				flag_help = 0;
+			}
+		}		
+
+		function GetForm()
+		{
+			var color = document.getElementById("setting_color");
+			var body = document.getElementsByTagName("body")[0];
+			switch(color.value)
+			{
+				case "1" : body.style.background = "#eee"; break;
+				case "2" : body.style.background = "#000"; break;
+				case "3" : body.style.background = "#666"; break;
+				case "4" : body.style.background = "#00f"; break;
+				case "5" : body.style.background = "#222"; break;
+			}
+		}
+
+		function ShowSetting()
+		{
+			if(!flag_setting)
+			{
+				document.getElementById("setting").style.display = "block";
+				flag_setting = 1;
+			}
+			else 
+			{
+				document.getElementById("setting").style.display = "none";
+				flag_setting = 0;
+			}
 		}
 
 		function BeginGame()
@@ -209,7 +344,7 @@
 			imgs[imgs_sort[temp_index]].src = "icon/" + imgs_index + ".png";
 			temp_index++;
 			this.style.visibility = "hidden";
-			window.setInterval("ShowTime()",1000);
+			time_flow = window.setInterval("ShowTime()",1000);
 		}
 
 		window.onload = function()
@@ -222,8 +357,11 @@
 			document.getElementById("transition").height = (imgs[loop - 1].height) * 9;
 			//alert(document.getElementById("transition").height);
 			InitVector(imgs_sort);
-			document.getElementById("begin").getElementsByTagName("button")[0].addEventListener("click" ,BeginGame);
 			AddClick();
+			document.getElementById("begin").getElementsByTagName("button")[0].addEventListener("click" ,BeginGame);
+			document.getElementById("info").getElementsByTagName("span")[1].addEventListener("click" ,ShowHelp);
+			document.getElementById("info").getElementsByTagName("span")[0].addEventListener("click" ,ShowSetting);
+			document.getElementById("setting_form").addEventListener("click" ,GetForm);
 		}
 		
 	</script>
