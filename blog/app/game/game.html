@@ -1,4 +1,4 @@
-<!DOCTYPY html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -30,6 +30,7 @@
 			margin: 0 0;
 			padding: 0 0;
 			border: 0;
+			background: #222;
 		}
 		#begin button , #setting button{
 			margin:0 20px;
@@ -316,17 +317,23 @@
 			}
 		}		
 
+		function ImgBgcolor(color)
+		{
+			for(var loop = 0 ; loop < 63 ; loop++)
+				imgs[loop].style.background = color;
+		}
+
 		function GetForm()
 		{
 			var color = document.getElementById("setting_color");
 			var body = document.getElementsByTagName("body")[0];
 			switch(color.value)
 			{
-				case "1" : body.style.background = "#eee"; break;
-				case "2" : body.style.background = "#000"; break;
-				case "3" : body.style.background = "#666"; break;
-				case "4" : body.style.background = "#00f"; break;
-				case "5" : body.style.background = "#222"; break;
+				case "1" : body.style.background = "#eee"; ImgBgcolor("#eee"); break;
+				case "2" : body.style.background = "#000"; ImgBgcolor("#000"); break;
+				case "3" : body.style.background = "#666"; ImgBgcolor("#666"); break;
+				case "4" : body.style.background = "#00f"; ImgBgcolor("#00f"); break;
+				case "5" : body.style.background = "#222"; ImgBgcolor("#222"); break;
 			}
 		}
 
