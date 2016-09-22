@@ -1,0 +1,230 @@
+<!DOCTYPY html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+	</head>
+	<style>
+		body{
+			background: #222;
+		}
+		.lines,#begin{
+			width:100%;
+			vertical-align: middle;
+			text-align: center;
+		}
+		.lines img{
+			display: inline;
+			width:12%;
+			/*border:1px solid #aaa;*/
+			margin: 0 0;
+			padding: 0 0;
+			border: 0;
+		}
+		#begin button{
+			margin:0 20px;
+			margin-top: 10px;
+			background: #aaa;
+			color:#222;
+			padding: 10px 20px;
+			border-radius: 5px 5px 5px 5px;
+			outline: none;
+		}
+		#begin span{
+			color:#aaa;
+		}
+	</style>
+	<body>
+		<div id="transition"></div>
+		<div id="game">
+			<div class="lines">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+			</div>
+
+			<div class="lines">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+			</div>
+
+			<div class="lines">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+			</div>
+
+			<div class="lines">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+			</div>
+
+			<div class="lines">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+			</div>
+
+			<div class="lines">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+			</div>
+
+			<div class="lines">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+			</div>
+
+			<div class="lines">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+			</div>
+
+			<div class="lines">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+				<img src="" alt="">
+			</div>
+		</div>
+		<div id="begin">
+			<span>得分：000</span>
+			<button>开始</button>
+			<span>时间：000</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+
+		var time_sec = 0;
+		var get_score = 0;
+		var imgs = document.getElementsByTagName('img');
+		var imgs_sort = new Array();
+		var temp_index = 0;
+		var temp_img;
+		
+		for(var loop = 0 ; loop < 63 ; loop++)
+			imgs_sort[loop] = loop;
+
+		function ShowTime()
+		{
+			var string;
+			if(time_sec < 10)
+				string = "时间：00" + time_sec;
+			else if(time_sec < 100)
+				string = "时间：0" + time_sec;
+			else string = "时间：" + time_sec;
+			document.getElementById("begin").getElementsByTagName("span")[1].innerHTML = string;
+			time_sec++;
+		}
+
+		function InitVector(imgs_sort)
+		{
+			imgs_sort.sort(function(a,b){ return Math.random() > 0.5 ? -1 : 1;});
+		}
+
+		function AddClick()
+		{
+			for(var loop = 0 ; loop < 63 ; loop++)
+				imgs[loop].onclick = ClickSite;
+		}
+		function ClickSite()
+		{
+			var this_part = this.src.split(".");
+			if(this_part[this_part.length - 1] != "html")
+			{
+				if(this.index == (imgs_sort[temp_index-1] + 1))
+				{
+					var time = new Date();
+					var time_1 = time.getTime();
+					var time_2 = new Date();
+					var string;
+					if(get_score < 10)
+						string = "得分：00" + get_score;
+					else if(get_score < 100)
+						string = "时间：0" + get_score;
+					else string = "时间：" + get_score;
+					document.getElementById("begin").getElementsByTagName("span")[0].innerHTML = string;
+					get_score++;
+					//alert(time_1);						
+					document.getElementById("game").style.visibility = "hidden";
+					var imgs_index = parseInt(Math.random() * (14 + 1) + 14 , 10);
+					temp_img = imgs_index;
+					imgs[imgs_sort[temp_index]].src = "icon/" + imgs_index + ".png";
+					window.setTimeout("document.getElementById(\"game\").style.visibility = \"visible\"",1000);
+					temp_index++;
+				}
+				else 
+				{
+					alert("YOU LOSE");
+				}
+			}
+
+		}
+
+		function BeginGame()
+		{
+			var imgs_index = parseInt(Math.random() * (14 + 1) + 14 , 10);
+			temp_img = imgs_index;
+			imgs[imgs_sort[temp_index]].src = "icon/" + imgs_index + ".png";
+			temp_index++;
+			this.style.visibility = "hidden";
+			window.setInterval("ShowTime()",1000);
+		}
+
+		window.onload = function()
+		{
+			for(var loop = 0 ; loop < 63 ; loop++)
+				{
+					imgs[loop].height = imgs[loop].width;
+					imgs[loop].index = loop + 1;
+				}
+			document.getElementById("transition").height = (imgs[loop - 1].height) * 9;
+			//alert(document.getElementById("transition").height);
+			InitVector(imgs_sort);
+			document.getElementById("begin").getElementsByTagName("button")[0].addEventListener("click" ,BeginGame);
+			AddClick();
+		}
+		
+	</script>
+</html>
