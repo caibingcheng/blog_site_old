@@ -89,9 +89,23 @@
 		#temp{
 			display: none;
 		}
+		#transition{
+			width:100%;
+			position: absolute;
+			top:0;
+			text-align: center;
+			padding: 50px 0px;
+			color:#fff;
+			opacity: 0.8;
+			display: none;
+		}
 	</style>
 	<body>
-		<div id="transition"></div>
+		<div id="transition">
+			<h2>游 戏 结 束</h3>
+			<h3>得分：</h2>
+			<h3>用时：</h2>
+		</div>
 		<div id="game">
 			<div class="lines">
 				<img src="" alt="">
@@ -253,7 +267,6 @@
 		
 		for(var loop = 0 ; loop < 63 ; loop++)
 			imgs_sort[loop] = loop;
-
 		function ShowTime()
 		{
 			var string;
@@ -310,18 +323,18 @@
 				}
 				else 
 				{
-					var score = "你的得分为：" + get_score + "\n";
-					var time = "用时：" + time_sec + "s";
-					alert(score+time)	;
-					get_score = 0;
-					time_sec = 0;
-					for(var loop = 0 ; loop < 63 ; loop++)
-						imgs[loop].src = "";
-					InitVector(imgs_sort);
+					imgs[imgs_sort[temp_index-1]].style.border="1px red solid";
+					var score = "得分：" + get_score;
+				    var time = "用时：" + (parseInt(time_sec)-1) + "s";
+				 	var transition =  document.getElementById("transition");
+				    transition.getElementsByTagName("h3")[0].innerHTML = score;
+				    transition.getElementsByTagName("h3")[1].innerHTML = time;
+					transition.style.display = "block";
+
+					document.getElementById("begin").getElementsByTagName("button")[0].innerHTML = "继续";
 					document.getElementById("begin").getElementsByTagName("button")[0].style.visibility = "visible";
 					clearInterval(time_flow);
-					document.getElementById("begin").getElementsByTagName("span")[0].innerHTML = "得分：000";
-					document.getElementById("begin").getElementsByTagName("span")[1].innerHTML = "时间：000";
+
 				}
 			}
 
@@ -377,12 +390,33 @@
 
 		function BeginGame()
 		{
-			var imgs_index = parseInt(Math.random() * (14 + 1) + 14 , 10);
-			temp_img = imgs_index;
-			imgs[imgs_sort[temp_index]].src = "icon/" + imgs_index + ".png";
-			temp_index++;
-			this.style.visibility = "hidden";
-			time_flow = window.setInterval("ShowTime()",1000);
+			if(this.innerHTML != "继续")
+			{
+				var imgs_index = parseInt(Math.random() * (14 + 1) + 14 , 10);
+				temp_img = imgs_index;
+				imgs[imgs_sort[temp_index]].src = "icon/" + imgs_index + ".png";
+				temp_index++;
+				this.style.visibility = "hidden";
+				time_flow = window.setInterval("ShowTime()",1000);
+			}
+			else
+			{
+				imgs[imgs_sort[temp_index-1]].style.border="0";
+				get_score = 0;
+				time_sec = 0;
+				document.getElementById("begin").getElementsByTagName("span")[0].innerHTML = "得分：000";
+				document.getElementById("begin").getElementsByTagName("span")[1].innerHTML = "时间：000";
+				for(var loop = 0 ; loop < 63 ; loop++)
+						imgs[loop].src = "";
+					InitVector(imgs_sort);
+				document.getElementById("transition").style.display = "none";
+				var imgs_index = parseInt(Math.random() * (14 + 1) + 14 , 10);
+				temp_img = imgs_index;
+				imgs[imgs_sort[temp_index]].src = "icon/" + imgs_index + ".png";
+				temp_index++;
+				this.style.visibility = "hidden";
+				time_flow = window.setInterval("ShowTime()",1000);
+			}
 		}
 
 		window.onload = function()
