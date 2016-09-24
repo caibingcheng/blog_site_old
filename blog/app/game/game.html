@@ -53,7 +53,8 @@
 		}
 		#info span{
 			width: 50%;
-			margin: 0 50px;
+			margin: 0 30px;
+			padding: 0 30px;
 			text-align: center;
 		}
 		#setting{
@@ -98,6 +99,13 @@
 			color:#fff;
 			opacity: 0.8;
 			display: none;
+		}
+		video{
+			display: none;
+		}
+		input[type="checkbox"]{
+			height:10px;
+			width:20px;
 		}
 	</style>
 	<body>
@@ -216,6 +224,9 @@
 				<option value="4">蓝色</option>	
 			</select>
 			<br>
+			<br>
+<!-- 			背景音乐：<input type="checkbox" id="check_music">
+			<br> -->
 			<button id="setting_form">确定</button>
 		</div>
 		<div id="help">
@@ -253,8 +264,12 @@
 				<img src="icon/32.png" alt="">
 			</div>
 		</div>
+<!-- 		<video controls loop name="bgmusic">
+			<source src="http://wvvw.peiyin.me/yinyue-16-2015-08-08-e11313acc1e9a455a6a0a7b1af1ee0a5.mp3" type="audio/mp3">
+		</video> -->
 	</body>
 	<script type="text/javascript">
+	// 没有注释！！！
 		var time_sec = 0;
 		var get_score = 0;
 		var imgs = document.getElementsByTagName('img');
@@ -313,13 +328,29 @@
 					var time_1 = time.getTime();
 					var time_2 = new Date();
 					GetScore();
-					//alert(time_1);						
-					document.getElementById("game").style.visibility = "hidden";
-					var imgs_index = parseInt(Math.random() * (14 + 1) + 14 , 10);
-					temp_img = imgs_index;
-					imgs[imgs_sort[temp_index]].src = "icon/" + imgs_index + ".png";
-					window.setTimeout("document.getElementById(\"game\").style.visibility = \"visible\"",500);
-					temp_index++;
+					//alert(time_1);
+					if(parseInt(get_score) == 63)
+					{
+						var score = "得分：" + get_score;
+					    var time = "用时：" + (parseInt(time_sec)-1) + "s";
+					 	var transition =  document.getElementById("transition");
+					 	transition.getElementsByTagName("h2")[0].innerHTML = "大师，你赢了！"
+					    transition.getElementsByTagName("h3")[0].innerHTML = score;
+					    transition.getElementsByTagName("h3")[1].innerHTML = time;
+						transition.style.display = "block";
+						document.getElementById("begin").getElementsByTagName("button")[0].innerHTML = "继续";
+						document.getElementById("begin").getElementsByTagName("button")[0].style.visibility = "visible";
+						clearInterval(time_flow);
+					}		
+					else
+					{
+						document.getElementById("game").style.visibility = "hidden";
+						var imgs_index = parseInt(Math.random() * (14 + 1) + 14 , 10);
+						temp_img = imgs_index;
+						imgs[imgs_sort[temp_index]].src = "icon/" + imgs_index + ".png";
+						window.setTimeout("document.getElementById(\"game\").style.visibility = \"visible\"",500);
+						temp_index++;
+					}				
 				}
 				else 
 				{
@@ -327,6 +358,7 @@
 					var score = "得分：" + get_score;
 				    var time = "用时：" + (parseInt(time_sec)-1) + "s";
 				 	var transition =  document.getElementById("transition");
+				 	transition.getElementsByTagName("h2")[0].innerHTML = "游 戏 结 束";
 				    transition.getElementsByTagName("h3")[0].innerHTML = score;
 				    transition.getElementsByTagName("h3")[1].innerHTML = time;
 					transition.style.display = "block";
@@ -372,6 +404,14 @@
 				case "4" : body.style.background = "#00f"; ImgBgcolor("#00f"); break;
 				case "5" : body.style.background = "#222"; ImgBgcolor("#222"); break;
 			}
+			// var check_music = document.getElementById("check_music");
+			// if(check_music.checked)
+			// 	{
+			// 		alert(0);
+			// 		document.getElementsByTagName("video")[0].autoplay = "autoplay";
+			// 	}
+			document.getElementById("setting").style.display = "none";
+			flag_setting = 0;
 		}
 
 		function ShowSetting()
