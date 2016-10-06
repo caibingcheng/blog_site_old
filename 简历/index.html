@@ -190,39 +190,6 @@
 		-webkit-transform: rotate(-30deg);
 		transform: rotate(-30deg);
 	}
-	#about_info {
-		clear: both;
-		margin: 50% auto;
-		height: 160px;
-		width: 0;
-		position: relative;
-		overflow: hidden;
-	}
-	#about_info:before,
-	#about_info:after {
-		position: absolute;
-		width: 50px;
-		height: 50px;
-		content: "";
-	}
-	#about_info:before {
-		top: 0;
-		left: 0;
-		border-top: 2px solid #5686D6;
-		border-left: 2px solid #5686D6;
-	}
-	#about_info:after {
-		bottom: 0;
-		right: 0;
-		border-right: 2px solid #5686D6;
-		border-bottom: 2px solid #5686D6;
-	}
-	#about_info p {
-		text-align: center;
-		line-height: 40px;
-		position: relative;
-		bottom: -300px;
-	}
 	@-webkit-keyframes l_to_r {
 		49% {
 			-webkit-transform: translate(100%);
@@ -276,9 +243,8 @@
 		padding: 15px 0;
 	}
 	}	
-	#about hr{
+	#about .title hr{
 		width:150px;
-		line-height: 2px;
 	}
 	#about h1{
 		color:#bebebe;
@@ -288,6 +254,12 @@
 		position: relative;
 		bottom: 10px;
 		color: #ffb3be;
+	}
+	#about_info{
+		color:#ffb3be;
+	}
+	#about_info hr{
+		width:300px;
 	}
 </style>
 </head>
@@ -316,7 +288,6 @@
 	</div>
 
 	<div id="fullpage">
-
 		<div class="section">
 			<div id="about">
 				<div id="about_content">
@@ -344,7 +315,14 @@
 	                        <div class="about_list_cn" id="about_cn_sta">状态<p>在读</p></div>
 	                    </div>
 					</div>
-					<div id="about_info"></div>
+					<br>
+					<div id="about_info">
+						<hr>
+						<p>就读于华中科技大学自动化学院自动化专业</p>
+						<p>喜欢缓慢抒情的纯音</p>
+						<p>喜欢优雅的代码，且略微强迫症</p>
+						<p>热衷于用原生方式实现功能的码农</p>
+					</div>
 				</div>
 			</div>
 		</div>
