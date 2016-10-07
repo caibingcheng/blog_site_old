@@ -243,13 +243,13 @@
 		padding: 15px 0;
 	}
 	}	
-	#about .title hr{
+	hr{
 		width:150px;
 	}
-	#about h1{
+	h1{
 		color:#bebebe;
 	}
-	#about h3{
+	h3{
 		padding: 0 0;
 		position: relative;
 		bottom: 10px;
@@ -260,6 +260,132 @@
 	}
 	#about_info hr{
 		width:300px;
+	}
+	.skill h1{
+		color:#ffb3be;
+	}
+	.skill h3{
+		color:#fcc5c7;
+	}
+	.skill hr{
+		color:blue;
+	}
+	.experience h1{
+		color:#78d45c;
+	}
+	.experience h3{
+		color:#55d41c;
+	}
+	.demo h1{
+		color:#fccdbe;
+	}
+	.skill	table{
+		float:right;
+		margin-right:100px;
+	}
+	.skill tr td:nth-child(1){
+		padding: 0 8px
+	}
+	.skill tr td:nth-child(2){
+		color:#ffb3be;
+		height:30px;
+		vertical-align: middle;
+		line-height: 30px;
+	}
+	.skill tr td:nth-child(3){
+		width: 400px;
+		height:30px;
+		vertical-align: middle;
+		line-height: 30px;
+		background: #ffb3be;
+		padding: 0 0;
+		border:0;
+		border-radius: 5px 5px 5px 5px;
+		opacity: 0.8;
+	}
+	.skill tr div{
+		border-radius: 5px 5px 5px 5px;
+		height:100%;
+		border:0;
+		background: #bebebe;
+		color:#ffb3be;
+		opacity: 1;	
+	}
+	.skill tr{
+		opacity: 100;
+	}
+	.skill tr:hover{
+		opacity: 0.8;
+	}
+	#html{
+		width:90%;
+	}
+	#html:after{
+		content: "90%"
+	}
+	#css{
+		width:80%;
+	}
+	#css:after{
+		content: "80%"
+	}
+	#js{
+		width:84%;
+	}
+	#js:after{
+		content: "84%"
+	}
+	#py{
+		width:70%;
+	}
+	#py:after{
+		content: "70%"
+	}
+	#c{
+		width:88%;
+	}
+	#c:after{
+		content: "88%"
+	}
+	.skill{
+		text-align: center;
+	}
+	.skill p{
+		color:#ffb3be;
+		width:100%;
+	}
+	.skill .detail{
+		width:330px;
+		height:180px;
+		padding: 5px 5px;
+		border-radius: 5px 5px 5px 5px;
+		background:#ffb3be;
+		margin-left: 80px;
+		margin-top: 10px;
+		float: left;
+		opacity: 0.6;
+	}
+	.skill table img{
+		transform: rotateZ(90deg);
+		opacity: 0.8;
+	}
+	.skill table tr{
+		cursor: pointer;
+	}
+	.skill table tr img[class="on"]{
+		transform: rotateZ(-90deg);
+		transition: transform 0.5s;
+		background: none;
+	}
+	.skill table tr img[class="back"]{
+		transform: rotateZ(90deg);
+		transition: transform 0.5s;
+		background: none;
+	}
+	.skill .detail{
+		vertical-align: middle;
+		line-height: 30px;
+		text-align: initial;
 	}
 </style>
 </head>
@@ -283,16 +409,16 @@
 			<a href="http://user.qzone.qq.com/1193376579" target="_blank"><img title="QQ空间" src="./statics/qqzone.jpg"></a>
 		</div>
 		<div class="footer">
-		<abbr title="参考http://www.flqin.com">Designed</abbr> by <i>Cai Bingcheng</i> in HUST, 2016
+		<abbr title="">Designed</abbr> by <i>Cai Bingcheng</i> in HUST, 2016
 		</div>
 	</div>
 
 	<div id="fullpage">
-		<div class="section">
+		<div class="section about">
 			<div id="about">
 				<div id="about_content">
 					<div class="title">
-						<br><br>
+						<br><br><br>
 						<h1>关于我</h1>
 						<hr>
 						<h3>ABOUT ME</h3>
@@ -320,22 +446,79 @@
 						<hr>
 						<p>就读于华中科技大学自动化学院自动化专业</p>
 						<p>喜欢缓慢抒情的纯音</p>
-						<p>喜欢优雅的代码，且略微强迫症</p>
+						<p>喜欢优雅、富有层次感的代码，且略微强迫症</p>
 						<p>热衷于用原生方式实现功能的码农</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-	    <div class="section">
-	    	
+	    <div class="section skill">
+	    	<div class="title">
+				<br><br><br>
+				<h1>专业技能</h1>
+				<hr>
+				<h3>SKILLS</h3>
+	    	</div>
+	    	<p>专注原生，专注赋予代码思想及美感</p>
+	    	<p>我的熟练度仅取决于我对它热爱得有多深</p>
+	    	<br>
+	    	<div class="info">
+	    		<br>
+	    		<div class="detail"></div>
+	    		<div class="item">
+	    			<table>
+	    				<tr>	
+	    					<td id="html-img"><img src="./statics/angle.png"></td>
+	    					<td for="html-img">HTML</td>
+	    					<td><div id="html"></div></td>
+	    				</tr>
+	    				<br>
+	    				<tr>
+	    					<td><img src="./statics/angle.png"></td>
+	    					<td>CSS</td>
+	    					<td><div id="css"></div></td>
+	    				</tr>
+	    				<tr>
+	    					<td><img src="./statics/angle.png"></td>
+	    					<td>JAVASCRIPT</td>
+	    					<td><div id="js"></div></td>
+	    				</tr>
+	    				<tr>
+	    					<td><img src="./statics/angle.png"></td>
+	    					<td>PYTHON</td>
+	    					<td><div id="py"></div></td>
+	    				</tr>
+	    				<tr>
+	    					<td><img src="./statics/angle.png"></td>
+	    					<td>C/C++</td>
+	    					<td><div id="c"></div></td>
+	    				</tr>
+	    			</table>
+	    		</div>
+	    	</div>
+	    	<br><br><br><br><br><br><br><br><br><br><br>
+	    	<div>
+	    		<p>学习之路将永不止步，希望未来的我将站在世界顶尖技术的前沿</p>
+	    	</div>
 	    </div>
 
-	    <div class="section">
-
+	    <div class="section experience">
+			<div class="title">
+				<br><br><br>
+				<h1>我的经历</h1>
+				<hr>
+				<h3>EXPERIENCE</h3>				
+			</div>
 	    </div>
-	    <div class="section">
-	    	
+
+	    <div class="section demo">
+			<div class="title">
+				<br><br><br>
+				<h1>我的作品</h1>
+				<hr>
+				<h3>DEMO</h3>
+			</div>	    	
 	    </div>
 	</div>
 
@@ -354,6 +537,29 @@
         slidesNavPosition:"bottom",
          'sectionsColor': ['#456789', '#78d45c', '#fccdbe', '#45cdb6'],
     })
-})
+	})
+
+
+	var text=new Array;
+	text["html"]="<ul><li>理解Web标准</li><li>了解DOM机制</li><li>熟练运用html标签</li><li>熟悉xml标记语言</li><li>掌握部分html5新特性</li></ul>";
+	text["css"]="<ul><li>能够运用CSS及CSS3新属性</li><li>注重设备兼容及浏览器兼容</li><li>能够运用bootstrap框架</li><li>希望开发编程风格的CSS</li><li>注重CSS的渲染性能</li></ul>";
+	text["js"]="<ul><li>熟练掌握原生JS</li><li>注重JS代码的性能优化</li><li>注重JS代码的形式美化</li><li>能够运用jQuery</li><li>了解XSS及CSRF等漏洞</li></ul>";
+	text["py"]="<ul><li>了解Python的运行机制</li><br><li>了解flask后台开发模块</li><br><li>能够制作简单的WEB爬虫</li></ul>";
+	text["c"]="<ul><li>掌握面向对象的思想</li><li>了解OpenCV机器视觉库</li><li>注重用户体验及容错</li><li>注重C语言代码的性能优化</li><li>能够基于OpenCV开发简单人脸检测系统</li></ul>";
+	document.getElementsByClassName("skill")[0].getElementsByClassName("detail")[0].innerHTML=text["html"];
+	document.getElementsByClassName("skill")[0].getElementsByTagName("img")[0].setAttribute("class","on");
+	function ShowSkill(){
+		var skill_text = document.getElementsByClassName("skill")[0].getElementsByClassName("detail")[0];
+		var tr = document.getElementsByClassName("skill")[0].getElementsByTagName("tr");
+		skill_text.innerHTML=text[this.getElementsByTagName("div")[0].id];
+		for(var loop=0;loop<5;loop++)
+			tr[loop].getElementsByTagName("img")[0].setAttribute("class","back");
+		this.getElementsByTagName("img")[0].setAttribute("class","on");
+	}
+	var td=document.getElementsByClassName("skill")[0].getElementsByClassName("item")[0].getElementsByTagName("tr");
+	for(var loop=0;loop<5;loop++)
+	{
+		td[loop].addEventListener("click",ShowSkill);
+	}
 </script>
 </html>
