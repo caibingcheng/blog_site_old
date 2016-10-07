@@ -762,16 +762,16 @@
 	var len=document.getElementsByClassName("experience")[0].getElementsByClassName("date-info").length;
 	function LoopExperienceLeft()
 	{
-		if((--loop_experience) <= 0)
-			loop_experience=0;
+		if((--loop_experience) < 0)
+			loop_experience=len-1;
 		var date_info=this.parentNode.getElementsByClassName("all-info")[0];
 		date_info.style.marginLeft = -(loop_experience)*704+"px";
 		document.getElementById("date-show").innerHTML=document.getElementsByClassName("experience")[0].getElementsByClassName("date")[0].getElementsByTagName("div")[loop_experience].getAttribute("title");
 	}
 	function LoopExperienceRight()
 	{	
-		if((++loop_experience) >= len-1)
-			loop_experience=len-1;
+		if((++loop_experience) > len-1)
+			loop_experience=0;
 		var date_info=this.parentNode.getElementsByClassName("all-info")[0];
 		date_info.style.marginLeft = -(loop_experience)*704+"px";
 		document.getElementById("date-show").innerHTML=document.getElementsByClassName("experience")[0].getElementsByClassName("date")[0].getElementsByTagName("div")[loop_experience].getAttribute("title");
