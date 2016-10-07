@@ -271,10 +271,10 @@
 		color:blue;
 	}
 	.experience h1{
-		color:#78d45c;
+		color:#bebebe;
 	}
 	.experience h3{
-		color:#55d41c;
+		color:#4bd4d4;
 	}
 	.demo h1{
 		color:#fccdbe;
@@ -387,6 +387,114 @@
 		line-height: 30px;
 		text-align: initial;
 	}
+	.skill .skill-info{
+		width:1060px;
+	}
+	.experience .date div{
+		cursor: pointer;
+		width:15px;
+		height:15px;
+		background: #666;
+		border-radius: 50% 50% 50% 50%;
+		border:5px #aaa solid;
+		display: inline-block;
+		margin: 0 20px;
+	}
+	.experience .date div:hover{
+		background: #333;
+		border:5px #999 solid;
+	}
+	.experience .info{
+		height:300px;
+		width:700px;
+		border-radius: 10px 10px 10px 10px;
+		opacity: 0.8; 
+		background: #beb2b4;
+		display: inline-block;
+		overflow: hidden;
+	}
+	.experience p{
+		color:#beb2b4;
+	}
+	.experience .info div[class="left-angle"]{
+		background: #666;
+		width: 40px;
+		height:40px;
+		opacity: 0.6;
+		line-height: 50px;
+		border-radius: 50% 50% 50% 50%;
+		position: relative;
+		top:130px;
+		left: 5px;
+		cursor: pointer;
+		z-index: 7;
+	}
+	.experience .info div[class="left-angle"] img{
+		transform: rotateZ(-90deg);
+	}
+	.experience .info div[class="right-angle"]{
+		background: #666;
+		width: 40px;
+		height:40px;
+		opacity: 0.6;
+		line-height: 50px;
+		border-radius: 50% 50% 50% 50%;
+		position: relative;
+		top:90px;
+		left: 655px;
+		cursor: pointer;
+		z-index: 7;
+	}
+	.experience .info div[class="right-angle"] img{
+		transform: rotateZ(90deg);
+	}
+	.experience .info div[class="left-angle"]:hover , .experience .info div[class="right-angle"]:hover{
+		opacity: 0.8
+	}
+	.experience .info span:nth-child(1){
+		display: inline-block;
+		float: left;
+		margin :10px 0;
+		margin-left: 70px;
+		position: relative;
+		bottom:70px;
+		text-align: initial;
+	}
+	.experience .info span:nth-child(2){
+		display: inline-block;
+		float: right;
+		margin :10px 0;
+		margin-right: 70px;
+		position: relative;
+		bottom:70px;
+		text-align: initial;
+	}
+	.experience .info span p{
+		color: #000;
+	}
+	.experience .info span img{
+		width:260px;
+		height:260px;
+	}
+	.experience .info div[class="all-info"]{
+		width:100000px;
+		padding: 0 0;
+		height:300px;
+		text-align: initial;
+		margin: 0 0;
+		padding: 0 0;
+		float:left;
+	}
+	.experience .info .date-info{
+		width:700px;
+		height:300px;
+		padding: 0 0;
+		margin: 0 0;
+		display: inline-block;
+	}
+	.experience .info .all-info{
+		transition: all 1s;
+	}
 </style>
 </head>
 <body>
@@ -454,53 +562,55 @@
 		</div>
 
 	    <div class="section skill">
-	    	<div class="title">
-				<br><br><br>
-				<h1>专业技能</h1>
-				<hr>
-				<h3>SKILLS</h3>
-	    	</div>
-	    	<p>专注原生，专注赋予代码思想及美感</p>
-	    	<p>我的熟练度仅取决于我对它热爱得有多深</p>
-	    	<br>
-	    	<div class="info">
-	    		<br>
-	    		<div class="detail"></div>
-	    		<div class="item">
-	    			<table>
-	    				<tr>	
-	    					<td id="html-img"><img src="./statics/angle.png"></td>
-	    					<td for="html-img">HTML</td>
-	    					<td><div id="html"></div></td>
-	    				</tr>
-	    				<br>
-	    				<tr>
-	    					<td><img src="./statics/angle.png"></td>
-	    					<td>CSS</td>
-	    					<td><div id="css"></div></td>
-	    				</tr>
-	    				<tr>
-	    					<td><img src="./statics/angle.png"></td>
-	    					<td>JAVASCRIPT</td>
-	    					<td><div id="js"></div></td>
-	    				</tr>
-	    				<tr>
-	    					<td><img src="./statics/angle.png"></td>
-	    					<td>PYTHON</td>
-	    					<td><div id="py"></div></td>
-	    				</tr>
-	    				<tr>
-	    					<td><img src="./statics/angle.png"></td>
-	    					<td>C/C++</td>
-	    					<td><div id="c"></div></td>
-	    				</tr>
-	    			</table>
-	    		</div>
-	    	</div>
-	    	<br><br><br><br><br><br><br><br><br><br><br>
-	    	<div>
-	    		<p>学习之路将永不止步，希望未来的我将站在世界顶尖技术的前沿</p>
-	    	</div>
+		    <div class="skill-info">
+		    	<div class="title">
+					<br><br><br>
+					<h1>专业技能</h1>
+					<hr>
+					<h3>SKILLS</h3>
+		    	</div>
+		    	<p>专注原生，专注赋予代码思想及美感</p>
+		    	<p>我的熟练度仅取决于我对它热爱得有多深</p>
+		    	<br>
+		    	<div class="info">
+		    		<br>
+		    		<div class="detail"></div>
+		    		<div class="item">
+		    			<table>
+		    				<tr>	
+		    					<td id="html-img"><img src="./statics/angle.png"></td>
+		    					<td for="html-img">HTML</td>
+		    					<td><div id="html"></div></td>
+		    				</tr>
+		    				<br>
+		    				<tr>
+		    					<td><img src="./statics/angle.png"></td>
+		    					<td>CSS</td>
+		    					<td><div id="css"></div></td>
+		    				</tr>
+		    				<tr>
+		    					<td><img src="./statics/angle.png"></td>
+		    					<td>JAVASCRIPT</td>
+		    					<td><div id="js"></div></td>
+		    				</tr>
+		    				<tr>
+		    					<td><img src="./statics/angle.png"></td>
+		    					<td>PYTHON</td>
+		    					<td><div id="py"></div></td>
+		    				</tr>
+		    				<tr>
+		    					<td><img src="./statics/angle.png"></td>
+		    					<td>C/C++</td>
+		    					<td><div id="c"></div></td>
+		    				</tr>
+		    			</table>
+		    		</div>
+		    	</div>
+		    	<br><br><br><br><br><br><br><br><br><br><br>
+		    	<div>
+		    		<p>学习之路将永不停息</p>
+		    	</div>
+		    </div>
 	    </div>
 
 	    <div class="section experience">
@@ -509,6 +619,92 @@
 				<h1>我的经历</h1>
 				<hr>
 				<h3>EXPERIENCE</h3>				
+			</div>
+			<div>
+				<p>回首我的经历能够让我发现自己更多的不足</p>
+				<br>
+				<div class="info">
+					<div class="left-angle"><img src="./statics/angle.png" alt=""></div>
+					<div class="right-angle"><img src="./statics/angle.png" alt=""></div>
+					<div class="all-info">
+						<div class="date-1 date-info">
+						<span>
+							<h2>思存工作室</h2>
+							<p>加入了学生社团联合会的思存工作室</p>
+							<p>正式开始了我的前端修行之路</p>
+							<p>在这里我遇到了很多很好的同事/朋友</p>
+							<p>它给了我很多展示自己的平台</p>
+							<p>我的很多项目经验来源于此</p>
+						</span>
+						<span><img src="./statics/front-end.jpg" alt=""></span>
+						</div>
+						<div class="date-2 date-info">
+							<span>
+								<h2>校内智能车大赛</h2>
+								<p>第一次与队友合作的一个项目</p>
+								<p>前期基本上由我一个人完成</p>
+								<p>电路板基本由我焊接</p>
+								<p>学会了如何与队友共同解决问题</p>
+								<p>也获得了一位长期合作的队友</p>
+							</span>
+							<span><img src="./statics/car.jpg" alt=""></span>
+						</div>
+						<div class="date-3 date-info">
+							<span>
+								<h2>GNG团队</h2>
+								<p>自认为在这里学到的东西不多</p>
+								<p>团队中的交流不多</p>
+								<p>但是能够留在团队也是对自身能力的验证</p>
+								<p>某段时间内对此类团队再无兴趣</p>
+								<p>后期因为与思存的部分项目冲突选择退出</p>
+							</span>
+							<span><img src="./statics/mass.png" alt=""></span>
+						</div>
+						<div class="date-4 date-info">
+							<span>
+								<h2>AR/VR项目</h2>
+								<p>这是班主任老师执行的一个项目</p>
+								<p>我请求加入其中</p>
+								<p>目前还在学习相关的知识</p>
+								<p>相信我将能够在其中展现自我</p>
+								<p>它引导我学习了一些机器视觉内容</p>
+							</span>
+							<span><img src="./statics/vr.jpg" alt=""></span>
+						</div>
+						<div class="date-5 date-info">
+							<span>
+								<h2>RoboMaster团队</h2>
+								<p>目前还是新加入的队员</p>
+								<p>在此我将深入学习机器视觉相关内容</p>
+								<p>为2017年大赛努力</p>
+								<p>但志向并不是为了加入大疆</p>
+								<p>只是希望能够学到自己喜欢的东西</p>
+							</span>
+							<span><img src="./statics/cv.jpg" alt=""></span>
+						</div>
+						<div class="date-6 date-info">
+							<span>
+								<h2>C语言课程设计</h2>
+								<p>因为编译环境的问题</p>
+								<p>成为我耗时最久的一个项目</p>
+								<p>我负责了分形地形算法部分</p>
+								<p>制作了很多漂亮的分形图</p>
+								<p>目前正在优化部分图形处理算法</p>
+							</span>
+							<span><img src="./statics/ds.jpg" alt=""></span>
+						</div>
+					</div>
+				</div>
+				<br><br>
+				<div class="date">
+					<div title="2015年9月"></div>
+					<div title="2015年12月"></div>
+					<div title="2015年12月"></div>
+					<div title="2016年9月"></div>
+					<div title="2016年9月"></div>
+					<div title="2016年9月"></div>
+				</div>
+				<p id="date-show"></p>
 			</div>
 	    </div>
 
@@ -524,6 +720,7 @@
 
 
 </body>
+
 <script type="text/javascript">
 	$(function(){
     $('#fullpage').fullpage({
@@ -546,8 +743,11 @@
 	text["js"]="<ul><li>熟练掌握原生JS</li><li>注重JS代码的性能优化</li><li>注重JS代码的形式美化</li><li>能够运用jQuery</li><li>了解XSS及CSRF等漏洞</li></ul>";
 	text["py"]="<ul><li>了解Python的运行机制</li><br><li>了解flask后台开发模块</li><br><li>能够制作简单的WEB爬虫</li></ul>";
 	text["c"]="<ul><li>掌握面向对象的思想</li><li>了解OpenCV机器视觉库</li><li>注重用户体验及容错</li><li>注重C语言代码的性能优化</li><li>能够基于OpenCV开发简单人脸检测系统</li></ul>";
+	
 	document.getElementsByClassName("skill")[0].getElementsByClassName("detail")[0].innerHTML=text["html"];
 	document.getElementsByClassName("skill")[0].getElementsByTagName("img")[0].setAttribute("class","on");
+	
+
 	function ShowSkill(){
 		var skill_text = document.getElementsByClassName("skill")[0].getElementsByClassName("detail")[0];
 		var tr = document.getElementsByClassName("skill")[0].getElementsByTagName("tr");
@@ -556,10 +756,52 @@
 			tr[loop].getElementsByTagName("img")[0].setAttribute("class","back");
 		this.getElementsByTagName("img")[0].setAttribute("class","on");
 	}
+	
+	var loop_experience=0;
+	var len=document.getElementsByClassName("experience")[0].getElementsByClassName("date-info").length;
+	function LoopExperienceLeft()
+	{
+		if((--loop_experience) <= 0)
+			loop_experience=0;
+		var date_info=this.parentNode.getElementsByClassName("all-info")[0];
+		date_info.style.marginLeft = -(loop_experience)*704+"px";
+		document.getElementById("date-show").innerHTML=document.getElementsByClassName("experience")[0].getElementsByClassName("date")[0].getElementsByTagName("div")[loop_experience].getAttribute("title");
+	}
+	function LoopExperienceRight()
+	{	
+		if((++loop_experience) >= len-1)
+			loop_experience=len-1;
+		var date_info=this.parentNode.getElementsByClassName("all-info")[0];
+		date_info.style.marginLeft = -(loop_experience)*704+"px";
+		document.getElementById("date-show").innerHTML=document.getElementsByClassName("experience")[0].getElementsByClassName("date")[0].getElementsByTagName("div")[loop_experience].getAttribute("title");
+	}
+	function LoopExperience()
+	{	
+		loop_experience = parseInt(this.getAttribute("name"));
+		var date_info=document.getElementsByClassName("experience")[0].getElementsByClassName("all-info")[0];
+		date_info.style.marginLeft = -(loop_experience)*704+"px";
+		document.getElementById("date-show").innerHTML=document.getElementsByClassName("experience")[0].getElementsByClassName("date")[0].getElementsByTagName("div")[loop_experience].getAttribute("title");
+	}
+
+
 	var td=document.getElementsByClassName("skill")[0].getElementsByClassName("item")[0].getElementsByTagName("tr");
+	
+	var date_div=document.getElementsByClassName("experience")[0].getElementsByClassName("date")[0].getElementsByTagName("div");
+
 	for(var loop=0;loop<5;loop++)
 	{
 		td[loop].addEventListener("click",ShowSkill);
+	}
+	
+	document.getElementById("date-show").innerHTML=document.getElementsByClassName("experience")[0].getElementsByClassName("date")[0].getElementsByTagName("div")[0].getAttribute("title");
+
+	document.getElementsByClassName("experience")[0].getElementsByClassName("info")[0].getElementsByTagName("div")[0].addEventListener("click",LoopExperienceLeft);
+	document.getElementsByClassName("experience")[0].getElementsByClassName("info")[0].getElementsByTagName("div")[1].addEventListener("click",LoopExperienceRight);
+
+	for(var loop=0;loop<date_div.length;loop++)
+	{
+		date_div[loop].addEventListener("click",LoopExperience);
+		date_div[loop].setAttribute("name",loop);
 	}
 </script>
 </html>
