@@ -495,6 +495,61 @@
 	.experience .info .all-info{
 		transition: all 1s;
 	}
+	.demo{
+		text-align: center;
+	}
+	.demo .info{
+		height:320px;
+		width:780px;
+		padding: 10px 10px;
+		display: inline-block;
+		background: #bebbed;
+		opacity: 0.8;
+		border-radius: 10px  10px  10px  10px;
+	}
+	.demo .info .line{
+		height:150px;
+		overflow:hidden;
+		margin:0 0;
+		padding: 0 0;
+		border:0;
+	}
+	.demo .info .line .cell{
+		height:300px;
+		width:150px;
+		position: relative;
+		display: inline-block;
+		border: 0;
+		padding: 0 0;
+		margin:0 0;
+		cursor: pointer;
+	}
+	@keyframes movecell{
+		from{top:0;}
+		to{top:-150px;}
+	}
+	.demo .info .line .cell:hover{
+		animation: movecell 0.5s forwards;
+	}
+	.demo .info .line .cell div
+	{
+		height: 150px;
+		width:150px;
+		background: #bebebe;
+		margin:0 0;
+		padding: 0 0;
+		border:0;
+	}
+	.demo .info .line .cell:nth-child(2) div{
+		background: #cd5f4d;
+	}
+	.demo .info .line img{
+		width:100%;
+		height:100%;
+		border:0;
+		margin:0 0;
+		padding: 0 0;
+	}
 </style>
 </head>
 <body>
@@ -714,7 +769,71 @@
 				<h1>我的作品</h1>
 				<hr>
 				<h3>DEMO</h3>
-				<p>还在建设中...很快就会更新...</p>
+				<br><br>
+				<div class="info">
+<!-- 					<div class="line">
+						<div class="cell">
+							<div><img src="./statics/header.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+						<div class="cell">
+							<div><img src="./statics/header.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+						<div class="cell">
+							<div><img src="./statics/header.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+						<div class="cell">
+							<div><img src="./statics/header.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+					</div> -->
+					<div class="line">
+						<div class="cell">
+							<div><img src="./statics/zixi.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+						<div class="cell">
+							<div><img src="./statics/header.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+						<div class="cell">
+							<div><img src="./statics/2048.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+						<div class="cell">
+							<div><img src="./statics/header.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+						<div class="cell">
+							<div><img src="./statics/jyl.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+					</div>
+					<div class="line">
+						<div class="cell">
+							<div><img src="./statics/header.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+						<div class="cell">
+							<div><img src="./statics/header.png" alt=""></div>
+							<div>hello</div>
+						</div>
+						<div class="cell">
+							<div><img src="./statics/AUlogo蓝.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+						<div class="cell">
+							<div><img src="./statics/weixin.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+						<div class="cell">
+							<div><img src="./statics/header.jpg" alt=""></div>
+							<div>hello</div>
+						</div>
+					</div>
+				</div>
 			</div>	    	
 	    </div>
 	</div>
