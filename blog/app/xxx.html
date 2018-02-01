@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+</head>
+<style type="text/css">
+	body{
+		padding: 0 0;
+		margin: 0 0;
+	}
+	.content{
+		width: 100%;
+		height: 100%;
+		background: #2fcf3e;
+		position: fixed;
+	}
+	.you{
+		border-radius: 50%;
+		width:50px;
+		height:50px;
+		background: #000;
+		position: absolute;
+	}
+</style>
+<body>
+	<div class = "content">
+		<div class = 'you'></div>
+	</div>
+</body>
+<script type="text/javascript">
+
+var you = document.getElementsByClassName('you')[0];
+var mouse_position_x = 0;
+var mouse_position_y = 0;
+var move_flag = true;
+
+document.onmousemove = function(e){
+	mouse_position_x = e.pageX;
+	mouse_position_y = e.pageY;
+}
+function sleep(n) {
+
+    var start = new Date().getTime();
+
+    while(true)  if(new Date().getTime()-start > n) break;
+
+    }
+    var i = 0;
+document.onmousedown = function test()
+{
+	setTimeout("test()", 1000);
+	if(i >= 50)
+		return;
+	{
+		you.style.left = i + "px";
+		you.style.top = i + "px";	
+		i++;
+	}
+}
+
+window.onload = function()
+{
+
+}
+
+</script>
+</html>
